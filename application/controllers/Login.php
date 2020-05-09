@@ -2,6 +2,14 @@
 defined('BASEPATH') OR exit('No direct access allowed');
 class Login extends CI_Controller
 {
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Home_model');
+		$this->load->library('template');
+		$this->load->library('session');
+	}
+
 
 	public function index(){
         $this->load->view('login');
@@ -12,16 +20,16 @@ class Login extends CI_Controller
     }
 
 	public function cek_log(){
-		$username = $this->input->post('username');
+		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-		$cek = $this->Mahasiswa_model->login($username,$password,'user')->result();
+		$cek = $this->Home_model->login($email,$password,'user')->result();
 		if($cek != FALSE){
 			foreach ($cek as $row) {
-				$user = $row->username;
-				$id_akses = $row->id_akses;
+				$user = $row->email;
+				$akses = $row->akses;
 			}
 			$this->session->set_userdata('session_user',$user);
-			$this->session->set_userdata('session_akses',$id_akses);
+			$this->session->set_userdata('session_akses',$akses);
 			redirect('Home');
 		}else{
 			$this->load->view('login');

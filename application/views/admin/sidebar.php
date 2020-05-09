@@ -26,7 +26,7 @@
                                 <i class="far fa-sun"></i>Produk</a>
                         </li> -->
                         <li>
-                            <a href="pelanggan.php">
+                            <a href="<?php echo base_url('admin22/list_user');?>">
                                 <i class="fas fa-users"></i>User</a>
                         </li>
                         <li>

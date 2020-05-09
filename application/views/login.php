@@ -42,6 +42,7 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
+                        <form class="user" action="<?php echo base_url('Login/cek_log');?>" method="POST">
                             <h2> Login </h2>
                         </div>
                         <div class="login-form">

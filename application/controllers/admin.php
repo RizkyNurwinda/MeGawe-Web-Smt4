@@ -15,5 +15,10 @@ class admin extends CI_Controller
 		$this->load->view('admin/head');
 	}
 
+	public function list_user(){
+		$this->template->views('admin22/list_mahasiswa');
+	}
+
+
 }
 ?>
