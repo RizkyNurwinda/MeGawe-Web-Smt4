@@ -1,10 +1,7 @@
-# ci_lowongan_pekerjaan
-CI Lowongan Pekerjaan
-
-Tugas Besar CodeIgniter
-
-Tema : Lowongan Pekerjaan
-
-MI2A
-1. Bhaktiar Adi Nugraha
-2. Muchammad Fahrul Yurisnan
+TUGAS PROJECT SEMESTER 4
+Nama Kelompok
+1. Rizky Nurwinda
+2. An Nissa Safitri
+3. Nur Kumala Sari
+4. Nina Ardana
+5. Sasti Widiyas sari
