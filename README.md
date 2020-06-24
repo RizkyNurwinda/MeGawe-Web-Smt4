@@ -1,10 +1,10 @@
-TUGAS PROJECT SEMESTER 4
+# ci_lowongan_pekerjaan
+CI Lowongan Pekerjaan
 
-MeGawe ( Website untuk mencari pekerjaan dan memasang pekerjaan) 
+Tugas Besar CodeIgniter
 
-Nama Kelompok
-1. Rizky Nurwinda
-2. An Nissa Safitri
-3. Nur Kumala Sari
-4. Nina Ardana
-5. Sasti Widiyas sari
+Tema : Lowongan Pekerjaan
+
+MI2A
+1. Bhaktiar Adi Nugraha
+2. Muchammad Fahrul Yurisnan
