@@ -1,10 +1,4 @@
-# ci_lowongan_pekerjaan
-CI Lowongan Pekerjaan
+# ci-restserver
+Check the recent version at https://github.com/chriskacerguis/codeigniter-restserver
 
-Tugas Besar CodeIgniter
-
-Tema : Lowongan Pekerjaan
-
-MI2A
-1. Bhaktiar Adi Nugraha
-2. Muchammad Fahrul Yurisnan
+My alternate version https://github.com/ardisaurus/old-rest-ci
