@@ -1,10 +1,4 @@
-TUGAS PROJECT SEMESTER 4
+# ci-restserver
+Check the recent version at https://github.com/chriskacerguis/codeigniter-restserver
 
-MeGawe ( Website untuk mencari pekerjaan dan memasang pekerjaan) 
-
-Nama Kelompok
-1. Rizky Nurwinda
-2. An Nissa Safitri
-3. Nur Kumala Sari
-4. Nina Ardana
-5. Sasti Widiyas sari
+My alternate version https://github.com/ardisaurus/old-rest-ci
