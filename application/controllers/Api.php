@@ -8,10 +8,6 @@ class Api extends CI_Controller
         $this->load->model('Api_model');
     }
 
-    public function index(){
-        echo 'megawe api';
-    }
-
     public function LoginApi()
     {
         $username = $this->input->post('username');
@@ -20,28 +16,4 @@ class Api extends CI_Controller
         header('content-type: application/json');
         echo json_encode($result);
     }
-
-    public function getUser()
-    {
-        $data = $this->Api_model->geUserApi();
-        header('content-type: application/json');
-        echo json_encode($data->result_array());
-    }
-
-    public function insertMember()
-    {
-        $data = $this->Api_model->insertMemberApi();
-        echo json_encode($data->result_array());
-    }
-
-    public function Profile($id)
-    {
-        $data = $this->Api_model->getProfile($id);
-        header('content-type: application/json');
-        echo json_encode($data->result_array());
-    }
-
-
-    
-
-   
+}
