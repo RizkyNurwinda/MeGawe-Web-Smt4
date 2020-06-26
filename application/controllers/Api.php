@@ -1,5 +1,4 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
 class Api extends CI_Controller
 {
     public function __construct()
@@ -17,16 +16,5 @@ class Api extends CI_Controller
         echo json_encode($result);
     }
     
-
 }
 
-   
-=======
-}
->>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
-=======
-}
->>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
-=======
-}
->>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
