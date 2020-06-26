@@ -7,6 +7,7 @@ class Api_model extends CI_Model
 		parent::__construct();
 	}
 
+<<<<<<< HEAD
     function loginApi($username,$password){
 		$this->db->select('*');
 		$this->db->from('user');
@@ -22,6 +23,12 @@ class Api_model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('user');
+=======
+	function loginApi($user, $password)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+>>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
 		$this->db->where('username', $user);
 		$this->db->where('password', $password);
 		$query = $this->db->get();
@@ -45,12 +52,15 @@ class Api_model extends CI_Model
 	function edit_dataApi($where, $table)
 	{
 		return $this->db->get_where($table, $where);
+<<<<<<< HEAD
 	}
 	
 
 	function edit_dataApi($where, $table)
 	{
 		return $this->db->get_where($table, $where);
+=======
+>>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
 	}
 
 	function update_dataApi($where, $data, $table)

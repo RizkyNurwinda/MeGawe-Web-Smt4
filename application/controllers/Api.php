@@ -18,12 +18,16 @@ class Api extends CI_Controller
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     
 
 }
 
    
+=======
+}
+>>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
 =======
 }
 >>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
