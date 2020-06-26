@@ -231,4 +231,11 @@ class Api_model extends CI_Model
 	{
 		return $this->db->insert('user', $data);
 	}
+
+	public function getProfil(){
+		$this->db->select('*');
+		$this->db->from('member');
+		$query=$this->db->get()->result();;
+		return $query;
+	}
 }

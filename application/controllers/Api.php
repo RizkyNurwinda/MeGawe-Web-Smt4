@@ -90,4 +90,10 @@ class Api extends CI_Controller
             echo json_encode($response);
         }
     }
+
+    public function Profil(){
+    $data = $this->Api_model->getProfil();
+    echo json_encode($data);
+    }
+
 }
