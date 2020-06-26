@@ -16,6 +16,7 @@ class Api extends CI_Controller
         header('content-type: application/json');
         echo json_encode($result);
     }
+<<<<<<< HEAD
     
 
 }
@@ -30,3 +31,7 @@ class Api extends CI_Controller
 =======
 }
 >>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
+=======
+
+   
+>>>>>>> parent of c70d9c1... tabrak
