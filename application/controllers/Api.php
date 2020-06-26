@@ -14,7 +14,8 @@ class Api extends CI_Controller
     public function LoginApi()
     {
         $username = $this->input->post('username');
-@@ -16,4 +20,28 @@ public function LoginApi()
+        $password = md5($this->input->post('password'));
+        $result = $this->Api_model->loginApi($username, $password)->result_array();
         header('content-type: application/json');
         echo json_encode($result);
     }
