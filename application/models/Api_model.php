@@ -2,42 +2,65 @@
 
 class Api_model extends CI_Model
 {
-    function __construct()
-    {
-        parent::__construct();
-    }
+	function __construct()
+	{
+		parent::__construct();
+	}
 
-    function loginApi($user,$pass,$table){
+    function loginApi($username,$password){
 		$this->db->select('*');
 		$this->db->from('user');
-		$this->db->where('username',$user);
+		$this->db->where('username',$username);
 		$this->db->where('password',$password);
+	function loginApi($user, $password)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where('username', $user);
+		$this->db->where('password', $password);
+	function loginApi($user, $password)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where('username', $user);
+		$this->db->where('password', $password);
 		$query = $this->db->get();
 		return $query;
 	}
 
-    function getAllApi(){
+	function getAllApi()
+	{
 		$this->db->select('*');
 		$this->db->from('user');
 		$this->db->join('akses', 'user.id_akses = akses.id_akses');
 		$query = $this->db->get();
 		return $query;
-    }
-    
-    function input_dataApi($data,$table){
-		$this->db->insert($table,$data);
 	}
 
-	function edit_dataApi($where,$table){
-		return $this->db->get_where($table,$where);
+	function input_dataApi($data, $table)
+	{
+		$this->db->insert($table, $data);
 	}
 
-	function update_dataApi($where,$data,$table){
+	function edit_dataApi($where, $table)
+	{
+		return $this->db->get_where($table, $where);
+	}
+	
+
+	function edit_dataApi($where, $table)
+	{
+		return $this->db->get_where($table, $where);
+	}
+
+	function update_dataApi($where, $data, $table)
+	{
 		$this->db->where($where);
-		$this->db->update($table,$data);
+		$this->db->update($table, $data);
 	}
 
-	function hapus_dataApi($where,$table){
+	function hapus_dataApi($where, $table)
+	{
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
@@ -46,9 +69,9 @@ class Api_model extends CI_Model
 	{
 		$query = $this->db->query('select * from akses');
 		return $query->result_array();
-    }
-    
-    public function getLowonganApi($get, $getkat=0, $kategori=0, $idPerusahaan=0)
+	}
+
+	public function getLowonganApi($get, $getkat = 0, $kategori = 0, $idPerusahaan = 0)
 	{
 		$this->db->join('perusahaan', 'lowongan.idPerusahaan = perusahaan.idPerusahaan', 'left');
 		$this->db->join('kategori_pekerjaan kp', 'lowongan.fkKategori = kp.idKategori', 'left');
@@ -101,13 +124,12 @@ class Api_model extends CI_Model
 		$config['upload_path'] = './assets/cv/';
 		$config['allowed_types'] = 'pdf';
 		$config['remove_space']  = TRUE;
-		
+
 		$this->load->library('upload', $config);
-		
-		if ($this->upload->do_upload('cv')){
+
+		if ($this->upload->do_upload('cv')) {
 			return array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
-		}
-		else{
+		} else {
 			return array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
 		}
 	}
@@ -136,7 +158,7 @@ class Api_model extends CI_Model
 		$this->db->from('pendaftar p');
 		$this->db->join('lowongan l', 'p.idLowongan = l.idLowongan');
 		if ($level == 'member') {
-			$this->db->where('p.idMember', $id);			
+			$this->db->where('p.idMember', $id);
 		} elseif ($level == 'perusahaan') {
 			$this->db->join('member m', 'p.idMember = m.idMember');
 			$this->db->where('p.idLowongan', $id);
@@ -191,25 +213,27 @@ class Api_model extends CI_Model
 
 	public function verifikasiPendaftarApi($idPendaftar, $keterangan)
 	{
-		if ($keterangan=='terima') {
-			$data = array('statusDaftar'=>'lolos','keterangan' => 'Terverifikasi');
+		if ($keterangan == 'terima') {
+			$data = array('statusDaftar' => 'lolos', 'keterangan' => 'Terverifikasi');
 		} else {
-			$data = array('statusDaftar'=>'tidak lolos','keterangan' => 'Terverifikasi');
+			$data = array('statusDaftar' => 'tidak lolos', 'keterangan' => 'Terverifikasi');
 		}
 		$this->db->where('idPendaftar', $idPendaftar);
 		$this->db->update('pendaftar', $data);
-    }
-    
-    public function updateUserApi($id){
-		$data = array('namaMember' => $this->input->post('nama'),'alamat' => $this->input->post('alamat'),'tanggalLahir' => $this->input->post('tanggalLahir'),'agama' => $this->input->post('agama'),'noTelp' => $this->input->post('notelp'),'jenisKelamin' => $this->input->post('jkl'),'email' => $this->input->post('email'));
-		$this->db->where('fkUser',$id);
-		$this->db->update('member',$data);
 	}
 
-    public function updatefotomApi($id){
+	public function updateUserApi($id)
+	{
+		$data = array('namaMember' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'tanggalLahir' => $this->input->post('tanggalLahir'), 'agama' => $this->input->post('agama'), 'noTelp' => $this->input->post('notelp'), 'jenisKelamin' => $this->input->post('jkl'), 'email' => $this->input->post('email'));
+		$this->db->where('fkUser', $id);
+		$this->db->update('member', $data);
+	}
+
+	public function updatefotomApi($id)
+	{
 		$file = $this->upload->data();
 		$data = array('fotoMember' => $file['file_name']);
-		$this->db->where('fkUser',$id);
-		$this->db->update('member',$data);
+		$this->db->where('fkUser', $id);
+		$this->db->update('member', $data);
 	}
 }

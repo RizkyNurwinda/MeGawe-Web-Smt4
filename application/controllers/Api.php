@@ -16,5 +16,17 @@ class Api extends CI_Controller
         header('content-type: application/json');
         echo json_encode($result);
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    
+
+}
 
    
+=======
+}
+>>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
+=======
+}
+>>>>>>> db3bb6735e3bd9b5f804ce6fbb9071b7704f7152
