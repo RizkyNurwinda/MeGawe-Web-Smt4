@@ -7,19 +7,18 @@ class Api_model extends CI_Model
 		parent::__construct();
 	}
 
-	function loginApi($user, $password)
-	{
-		$this->db->select('*');
-		$this->db->from('user');
-		$this->db->where('username', $user);
-		$this->db->where('password', $password);
-		$query = $this->db->get();
-		return $query;
-	}
-    function __construct()
-    {
-        parent::__construct();
-    }
+	function loginApi($user,$pass,$table){
+		function loginApi($user, $password)
+		{
+			$this->db->select('*');
+			$this->db->from('user');
+			$this->db->where('username',$user);
+			$this->db->where('password',$password);
+			$this->db->where('username', $user);
+			$this->db->where('password', $password);
+			$query = $this->db->get();
+			return $query;
+		}
 
 	function getAllApi()
 	{
