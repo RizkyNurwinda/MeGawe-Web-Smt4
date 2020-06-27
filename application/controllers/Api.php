@@ -96,4 +96,23 @@ class Api extends CI_Controller
     echo json_encode($data);
     }
 
+    public function Riwayat()
+    {
+        $data = $this->Api_model->getRiwayat();
+        header('content-type: application/json');
+        echo json_encode($data);
+    }
+    
+    public function Detail()
+    {
+        $data = $this->Api_model->getDetail();
+        header('content-type: application/json');
+        echo json_encode($data);
+    }
+
+
+
+
+
+
 }

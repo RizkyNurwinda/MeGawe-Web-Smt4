@@ -238,4 +238,19 @@ class Api_model extends CI_Model
 		$query=$this->db->get()->result();;
 		return $query;
 	}
+
+	public function getRiwayat(){
+		$this->db->select('*');
+		$this->db->from('pendaftar');
+		$query=$this->db->get()->result();;
+		return $query;
+	}
+
+	public function getDetail(){
+		$this->db->select('*');
+		$this->db->from('lowongan');
+		$query=$this->db->get()->result();;
+		return $query;
+	}
+	
 }
