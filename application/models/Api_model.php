@@ -232,6 +232,11 @@ class Api_model extends CI_Model
 		return $this->db->insert('user', $data);
 	}
 
+	public function getProfil2(){
+		$query="SELECT*FROM user join member on user.idUser=member.idMember";
+		return $this->db->query($query);
+	}
+
 	public function getProfil(){
 		$this->db->select('*');
 		$this->db->from('member');
@@ -240,16 +245,39 @@ class Api_model extends CI_Model
 	}
 
 	public function getRiwayat(){
-		$this->db->select('*');
-		$this->db->from('pendaftar');
-		$query=$this->db->get()->result();;
-		return $query;
+		$query="SELECT perusahaan.fkUser, perusahaan.namaPerusahaan, lowongan.gaji, pendaftar.tglDaftar, pendaftar.statusDaftar, pendaftar.keterangan FROM perusahaan, lowongan, pendaftar WHERE pendaftar.idLowongan= lowongan.idLowongan AND lowongan.idPerusahaan  = perusahaan.idPerusahaan";
+		
+		return $this->db->query($query);
 	}
+
+	// function getRiwayat($idUser){
+	// 	$this->db->select('*');
+	// 	// $this->db->select('perusahaan.namaPerusahaan, lowongan.gaji, pendaftar.tglDaftar, pendaftar.statusDaftar, pendaftar.keterangan');
+    //     $this->db->from('perusahaan');
+    //     $this->db->join('lowongan', 'perusahaan.idPerusahaan=lowongan.idPerusahaan');
+	// 	$this->db->join('pendaftar', 'pendaftar.idLowongan=lowongan.idLowongan');
+	// 	$this->db->join('user', 'user.idUser=perusahaan.fkUser');
+    //     $this->db->where('perusahaan.fkUser', $idUser);
+    //     $query = $this->db->get("");
+    //     return $query;
+		
+	// }
+	
 
 	public function getDetail(){
 		$this->db->select('*');
 		$this->db->from('lowongan');
 		$query=$this->db->get()->result();;
+		return $query;
+	}
+
+	function profilApi($nama, $alamat)
+	{
+		$this->db->select('*');
+		$this->db->from('member');
+		$this->db->where('namaMember', $nama);
+		$this->db->where('alamat', $alamat);
+		$query = $this->db->get();
 		return $query;
 	}
 	

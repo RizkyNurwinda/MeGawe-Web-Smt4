@@ -91,17 +91,43 @@ class Api extends CI_Controller
         }
     }
 
-    public function Profil(){
-    $data = $this->Api_model->getProfil();
-    echo json_encode($data);
+    // public function ProfilApi()
+    // {
+    //     $nama = $this->input->post('namaMember');
+    //     $alamat = md5($this->input->post('alamat'));
+    //     $result = $this->Api_model->profilApi($nama, $alamat)->result_array();
+    //     header('content-type: application/json');
+    //     echo json_encode($result);
+    // }
+
+    // public function Profil(){
+    // $data = $this->Api_model->getProfil();
+    // echo json_encode($data);
+    // }
+
+    public function Profil2()
+    {
+        $data = $this->Api_model->getProfil2();
+        header('content-type: application/json');
+        echo json_encode($data->result_array());
     }
 
     public function Riwayat()
     {
+        
         $data = $this->Api_model->getRiwayat();
         header('content-type: application/json');
-        echo json_encode($data);
+        echo json_encode($data->result_array());
     }
+
+    // public function Riwayat()
+    // {
+        
+    //     $id_user = $this->input->post('idUser');
+    //     $data = $this->Api_model->getRiwayat($id_user);
+    //     header('content-type: application/json');
+    //     echo json_encode($data->result_array());
+    // }
     
     public function Detail()
     {
@@ -109,6 +135,8 @@ class Api extends CI_Controller
         header('content-type: application/json');
         echo json_encode($data);
     }
+
+    
 
 
 
